@@ -1,1 +1,2 @@
-README - SIMPLE SHELL
+#README - SIMPLE SHELL
+Authors: Jhojan Perlaza Andres Ocaña
