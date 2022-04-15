@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-
+char *_strcat(char *dest, char *src);
 char **get_arguments(char *buffer, int cont);
 int execute(char **argv);
 char *get_PATH(char *argv);
