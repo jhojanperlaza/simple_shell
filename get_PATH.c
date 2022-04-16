@@ -6,8 +6,8 @@
  */
 char *get_PATH(char *comand)
 {
-	char *string_cat, **array_path;
-	char *copy, *token, *copy2, *string, *slash = "/";
+	char *string_cat = NULL, **array_path = NULL;
+	char *copy = NULL, *token = NULL, *copy2 = NULL, *string = NULL, *slash = "/";
 	int position = 0, cont = 0;
 	struct stat st;
 
@@ -24,7 +24,7 @@ char *get_PATH(char *comand)
 		cont++;
 	}
 	cont = cont + 1;
-	array_path = malloc(cont + 1 * sizeof(char *));
+	array_path = malloc(cont * sizeof(char *));
 
 	token = strtok(copy2, ":\n");
 	while (token != NULL)
