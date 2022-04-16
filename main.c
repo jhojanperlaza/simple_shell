@@ -10,20 +10,19 @@ int main(void)
 	size_t bufsize = 0;
 	int status = 0, cont = 0;
 
-	do
-	{
-		if (!isatty(fileno(stdin)))
+	do	{
+		if (isatty(fileno(stdin)))
 		{
-			printf("shell en modo no interactivo\n");
+			printf("simple_shell-> ");
 		}
-		printf("simple_shell-> ");
 		if (getline(&buffer, &bufsize, stdin) == -1)
 			return (-1);
 		copy = strdup(buffer);
-		token = strtok(copy, " ");
+		if (!(token = strtok(copy, " \t\n")))
+			continue;
 		while (token != NULL)
 		{
-			token = strtok(NULL, " ");
+			token = strtok(NULL, " \t\n");
 			cont++;
 		}
 		arg = get_arguments(buffer, cont);

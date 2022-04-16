@@ -7,25 +7,22 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	long unsigned int i = 0, j = 0, len = 0;
-    char *content = NULL, *con = NULL;
-    
-    free (content);    
-    len = strlen(dest) + strlen(src) + 1;
-    content = malloc((len) * sizeof(char));
-    if (content == NULL)
-        return (NULL);
-    for (i = 0; i < len; i++)
-    {
-        if (i < strlen(dest))
-          content[i] = dest[i];
-        if (i >= strlen(dest))
-        {
-          content[i] = src[j];
-          j++;
-        }
-    } 
-    con = content;
-    free(content);
-    return (con);
+	int i = 0;
+	int j = 0;
+
+	if (!dest || !src)
+		return(NULL);
+	while (dest[j] != '\0')
+	{
+		j++;
+	}
+	while (i < j && src[i] != '\0')
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+
+	return (dest);
 }
