@@ -16,5 +16,7 @@ char *_strcat(char *dest, char *src);
 char **get_arguments(char *buffer, int cont);
 int execute(char **argv);
 char *get_PATH(char *argv);
-void free_array(char **array, int n);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
+char *_strdup(char *str);
 #endif
