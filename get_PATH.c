@@ -6,17 +6,16 @@
  */
 char *get_PATH(char *comand)
 {
-	char slash[1024] = "/", *string_cat, **array_path = NULL;
-	char *copy, *token, *copy2, *string;
+	char slash[1024] = "/", *string_cat = NULL, **array_path = NULL;
+	char *copy = NULL, *token = NULL, *string = NULL;
 	int position = 0, cont = 0;
 	struct stat st;
 	char *path = getenv("PATH"); /**Busca una "lista de entorno"**/
 
-	string_cat = _strcat(slash, comand);
+	if (!(string_cat = _strcat(slash, comand)))
+		return (NULL);
 	if (!(copy = _strdup(path)))
 		return (NULL);
-	if(!(copy2 = _strdup(path)))
-		return(NULL);
 	token = strtok(copy, ":\n");
 	while (token != NULL)
 	{
@@ -26,7 +25,10 @@ char *get_PATH(char *comand)
 	array_path = malloc((cont + 1) * sizeof(char *));
 	if (!array_path)
 		return (NULL);
-	token = strtok(copy2, ":\n");
+	free(copy);
+	if (!(copy = _strdup(path)))
+		return (NULL);
+	token = strtok(copy, ":\n");
 	while (token != NULL)
 	{
 		array_path[position] = token;
@@ -38,11 +40,9 @@ char *get_PATH(char *comand)
 	{
 		position--;
 		string = _strcat(array_path[position], string_cat);
-		printf("%s\n", string);
 		if (stat(string, &st) == 0)
 		{
 			free(copy);
-			free(copy2);
 			free(array_path);
 			return (string);
 		}
