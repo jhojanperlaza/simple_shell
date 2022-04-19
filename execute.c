@@ -6,7 +6,7 @@
  * @buffer: is a string of getline
  * Return: The variable status or Error.
  */
-int execute(char **arguments, char *copy, char *buffer)
+int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 {
 	int status = 0, (*f)(char **comand, char *copy, char *buffer);
 	pid_t pid;
@@ -34,7 +34,7 @@ int execute(char **arguments, char *copy, char *buffer)
 	if (pid == 0)
 	{
 		if (execve(arguments[0], arguments, NULL) == -1)
-			perror("Error:");
+			print_error(file, copy, cont);
 	}
 	else
 	{

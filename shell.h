@@ -34,7 +34,7 @@ typedef struct get
 
 char *_strcat(char *dest, char *src);
 char **get_arguments(char *buffer, int cont);
-int execute(char **arguments, char *copy, char *buffer);
+int execute(char **arguments, char *copy, char *buffer, char **name_file, int cont);
 char *get_PATH(char *argv);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
@@ -42,4 +42,5 @@ char *_strdup(char *str);
 int fun_exit(char **comand, char *copy, char *buffer);
 int (*match_fun(char *comands))(char **comand,char *copy, char *buffer );
 int fun_env(char **arguments, char *copy, char *buffer);
+void print_error(char **name_file, char *copy, int cont);
 #endif

@@ -4,11 +4,11 @@
  *
  * Return: always 0.
  */
-int main(void)
+int main(int ac __attribute__((unused)), char **name_file)
 {
 	char *buffer = NULL, **arg, *copy, *token;
 	size_t bufsize = 0;
-	int status = 0, cont = 0;
+	int status = 0, cont = 0, cont_prom = 1;
 
 	do	{
 		if (isatty(fileno(stdin)))
@@ -24,17 +24,21 @@ int main(void)
 		copy = strdup(buffer);
 		token = strtok(copy, " \t\n");
 		if (!token)
+		{
+			cont_prom ++;
 			continue;
+		}
 		while (token != NULL)
 		{
 			token = strtok(NULL, " \t\n");
 			cont++;
 		}
 		arg = get_arguments(buffer, cont);
-		status = execute(arg, copy, buffer);
+		status = execute(arg, copy, buffer, name_file, cont_prom);
 		free(copy);
 		free(buffer);
 		buffer = NULL;
+		cont_prom ++;
 	} while (!status);
 	return (EXIT_FAILURE);
 }
