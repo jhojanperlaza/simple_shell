@@ -6,36 +6,30 @@
  */
 char *get_PATH(char *comand)
 {
-	char slash[1024] = "/", *string_cat = NULL, **array_path = NULL;
-	char *copy = NULL, *token = NULL, *string = NULL;
+	char slash[] = "/", *string_cat = NULL, **array_path = NULL;
+	char *copy = NULL, *token = NULL, *string = NULL, *path = getenv("PATH");
 	int position = 0, cont = 0;
 	struct stat st;
-	char *path = getenv("PATH"); /**Busca una "lista de entorno"**/
 
-	if (!(string_cat = _strcat(slash, comand)))
-		return (NULL);
-	if (!(copy = _strdup(path)))
-		return (NULL);
+	string_cat = _strcat(slash, comand);
+	copy = _strdup(path);
 	token = strtok(copy, ":\n");
 	while (token != NULL)
 	{
 		token = strtok(NULL, ":\n");
 		cont++;
-	}
-	array_path = malloc((cont + 1) * sizeof(char *));
+	}	array_path = malloc((cont + 1) * sizeof(char *));
 	if (!array_path)
 		return (NULL);
 	free(copy);
-	if (!(copy = _strdup(path)))
-		return (NULL);
+	copy = _strdup(path);
 	token = strtok(copy, ":\n");
 	while (token != NULL)
 	{
 		array_path[position] = token;
 		position++;
 		token = strtok(NULL, ":\n");
-	}
-	array_path[position] = NULL;
+	}	array_path[position] = NULL;
 	while (cont)
 	{
 		position--;
@@ -44,10 +38,12 @@ char *get_PATH(char *comand)
 		{
 			free(copy);
 			free(array_path);
+			free(string_cat);
 			return (string);
-		}
-		cont--;
-	}
-	free(copy);
+		}	cont--;
+		free(string);
+	}	free(copy);
+	free(array_path);
+	free(string_cat);
 	return (NULL);
 }
