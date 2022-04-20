@@ -1,10 +1,10 @@
 
 #include "shell.h"
 /**
- * _strlen - this function returns the lenght of string
- * @s: is a string of input
- *
- * Return: len of the string.
+ * print_error - print to error
+ * @name_file: is the name of execute
+ * @copy: is copy of buffer
+ * @cont: is the counter of prompt
  */
 void print_error(char **name_file, char *copy, int cont)
 {

@@ -1,7 +1,8 @@
 #include "shell.h"
 /**
  * main - simple shell
- *
+ * @name_file: is the name of file executable
+ * @ac: is the number of arguments
  * Return: always 0.
  */
 int main(int ac __attribute__((unused)), char **name_file)
@@ -25,7 +26,7 @@ int main(int ac __attribute__((unused)), char **name_file)
 		token = strtok(copy, " \t\n");
 		if (!token)
 		{
-			cont_prom ++;
+			cont_prom++;
 			continue;
 		}
 		while (token != NULL)
@@ -38,7 +39,7 @@ int main(int ac __attribute__((unused)), char **name_file)
 		free(copy);
 		free(buffer);
 		buffer = NULL;
-		cont_prom ++;
+		cont_prom++;
 	} while (!status);
 	return (EXIT_FAILURE);
 }

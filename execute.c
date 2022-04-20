@@ -4,6 +4,8 @@
  * @arguments: string of get arguments
  * @copy: is copy of buffer
  * @buffer: is a string of getline
+ * @file: is the name of file executable
+ * @cont: is the counter of prompt
  * Return: The variable status or Error.
  */
 int execute(char **arguments, char *copy, char *buffer, char **file, int cont)

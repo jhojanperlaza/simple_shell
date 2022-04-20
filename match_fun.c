@@ -10,9 +10,10 @@
 int (*match_fun(char *comands))(char **comand, char *copy, char *buffer)
 {
 	get_fun type[] = {
-		{"env", fun_env},
 		{"exit", fun_exit},
-		{NULL, NULL}};
+		{"env", fun_env},
+		{NULL, NULL}
+	};
 	int t;
 
 	for (t = 0; type[t].shape != NULL; t++)
