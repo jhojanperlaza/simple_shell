@@ -36,7 +36,8 @@ int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 	if (pid == 0)
 	{
 		if (execve(arguments[0], arguments, NULL) == -1)
-			print_error(file, copy, cont);
+			status =  print_error(file, copy, cont);
+		
 	}
 	else
 	{

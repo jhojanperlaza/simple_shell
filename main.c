@@ -40,6 +40,6 @@ int main(int ac __attribute__((unused)), char **name_file)
 		free(buffer);
 		buffer = NULL;
 		cont_prom++;
-	} while (!status);
+	} while (1 || !status);
 	return (EXIT_SUCCESS);
 }

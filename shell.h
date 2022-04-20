@@ -43,5 +43,5 @@ char *_strdup(char *str);
 int fun_exit(char **comand, char *copy, char *buffer);
 int (*match_fun(char *comands))(char **comand, char *copy, char *buffer);
 int fun_env(char **arguments, char *copy, char *buffer);
-void print_error(char **name_file, char *copy, int cont);
+int print_error(char **name_file, char *copy, int cont);
 #endif
