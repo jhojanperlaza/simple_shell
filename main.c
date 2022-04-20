@@ -7,7 +7,7 @@
  */
 int main(int ac __attribute__((unused)), char **name_file)
 {
-	char *buffer = NULL, **arg, *copy, *token;
+	char *buffer = NULL, **arg, *copy = NULL, *token;
 	size_t bufsize = 0;
 	int status = 0, cont = 0, cont_prom = 1;
 
@@ -22,11 +22,12 @@ int main(int ac __attribute__((unused)), char **name_file)
 			printf("\n");
 			return (EXIT_FAILURE);
 		}
-		copy = strdup(buffer);
+		copy = _strdup(buffer);
 		token = strtok(copy, " \t\n");
 		if (!token)
 		{
 			cont_prom++;
+			free(copy);
 			continue;
 		}
 		while (token != NULL)
@@ -41,5 +42,7 @@ int main(int ac __attribute__((unused)), char **name_file)
 		buffer = NULL;
 		cont_prom++;
 	} while (1 || !status);
+	free(buffer);
+	free(copy);
 	return (EXIT_SUCCESS);
 }
