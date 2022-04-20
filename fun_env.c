@@ -11,10 +11,10 @@ int fun_env(char **arguments, char *copy, char *buffer)
 {
 	char **env = environ;
 
-	if (!arguments || !copy || !buffer)
+	if (!arguments || !copy || !buffer) /* si son NULL */
 		return (-1);
 
-	while (*env)
+	while (*env) /* mientras se pueda recorrer */
 	{
 		printf("%s\n", *env);
 		env++;
