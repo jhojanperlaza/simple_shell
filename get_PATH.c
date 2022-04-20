@@ -7,7 +7,7 @@
 char *get_PATH(char *comand)
 {
 	char slash[] = "/", *string_cat = NULL, **array_path = NULL;
-	char *copy = NULL, *token = NULL, *string = NULL, *path = getenv("PATH"); /* Adquirir el PATH */
+	char *copy = NULL, *token = NULL, *string = NULL, *path = getenv("PATH");
 	int position = 0, cont = 0;
 	struct stat st;
 
