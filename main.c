@@ -44,5 +44,5 @@ int main(int ac __attribute__((unused)), char **name_file)
 	} while (1 || !status);
 	free(buffer);
 	free(copy);
-	return (EXIT_SUCCESS);
+	return (status);
 }

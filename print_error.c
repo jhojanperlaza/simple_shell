@@ -8,10 +8,12 @@
  */
 int print_error(char **name_file, char *copy, int cont)
 {
-	fprintf(stderr, "%s: %i: %s: not found", name_file[0], cont, copy);
+	int status;
+
+	status = fprintf(stderr, "%s: %i: %s: not found", name_file[0], cont, copy);
 	if (isatty(fileno(stdin)))
 	{
 		printf("\n");
 	}
-	return (0);
+	return (status);
 }
