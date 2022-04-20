@@ -41,5 +41,5 @@ int main(int ac __attribute__((unused)), char **name_file)
 		buffer = NULL;
 		cont_prom++;
 	} while (!status);
-	return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }
