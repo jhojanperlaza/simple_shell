@@ -11,7 +11,8 @@ char **get_arguments(char *buffer, int cont)
 	char **array_strings = NULL;
 	char *token = strtok(buffer, " \t\n");
 
-	array_strings = malloc((cont + 1) * sizeof(char *)); /* arreglo de punteros a string */
+	/*arreglo de punteros al string*/
+	array_strings = malloc((cont + 1) * sizeof(char *));
 	if (array_strings == NULL)
 	{
 		free(array_strings);
