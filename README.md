@@ -1,4 +1,5 @@
 #README - SIMPLE SHELL
+[![Whats-App-Image-2022-04-21-at-5-24-21-PM.jpg](https://i.postimg.cc/L6cP6H47/Whats-App-Image-2022-04-21-at-5-24-21-PM.jpg)](https://postimg.cc/dL935cym)
 Authors: Jhojan Perlaza and Andres Ocaña
 SHELL(1)(20 April 2022)                                                                       SHELL(1)(20 April 2022)
 
