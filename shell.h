@@ -44,4 +44,5 @@ int fun_exit(char **comand, char *copy, char *buffer);
 int (*match_fun(char *comands))(char **comand, char *copy, char *buffer);
 int fun_env(char **arguments, char *copy, char *buffer);
 int print_error(char **name_file, char *copy, int cont);
+int _strcmp(char *s1, char *s2);
 #endif

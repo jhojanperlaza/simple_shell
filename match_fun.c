@@ -18,7 +18,7 @@ int (*match_fun(char *comands))(char **comand, char *copy, char *buffer)
 
 	for (t = 0; type[t].shape != NULL; t++)
 	{
-		if (strcmp(type[t].shape, comands) == 0)
+		if (_strcmp(type[t].shape, comands) == 0)
 			return (type[t].f);
 	}
 	return (NULL);

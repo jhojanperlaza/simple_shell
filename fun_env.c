@@ -19,5 +19,5 @@ int fun_env(char **arguments, char *copy, char *buffer)
 		printf("%s\n", *env);
 		env++;
 	}
-	return (1);
+	return (0);
 }

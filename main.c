@@ -9,7 +9,7 @@ int main(int ac __attribute__((unused)), char **name_file)
 {
 	char *buffer = NULL, **arg, *copy = NULL, *token;
 	size_t bufsize = 0;
-	int status = 0, cont = 0, cont_prom = 1;
+	int status, cont = 0, cont_prom = 1;
 
 	do	{
 		if (isatty(fileno(stdin)))
@@ -41,8 +41,6 @@ int main(int ac __attribute__((unused)), char **name_file)
 		free(buffer);
 		buffer = NULL;
 		cont_prom++;
-	} while (1 || !status);
-	free(buffer);
-	free(copy);
+	} while (!status);
 	return (status);
 }

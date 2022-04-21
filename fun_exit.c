@@ -12,5 +12,5 @@ int fun_exit(char **comand, char *copy, char *buffer)
 	free(comand);
 	free(copy);
 	free(buffer);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
