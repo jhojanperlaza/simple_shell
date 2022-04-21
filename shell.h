@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
+#define TRUE 1
 /*
  * File: main.h
  * Auth: Andres Ocaña - Jhojan Perlaza
@@ -19,7 +20,6 @@
 #include <stdbool.h>
 
 extern char **environ;
-
 /**
  * struct get - helps to match the parameters
  *

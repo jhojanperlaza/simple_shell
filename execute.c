@@ -10,12 +10,11 @@
  */
 int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 {
-	int status1 = 0, (*f)(char **comand, char *copy, char *buffer);
+	int status, (*f)(char **comand, char *copy, char *buffer);
 	pid_t pid;
 	char *string_exe = NULL;
 	struct stat st;
 	bool is_alias = false;
-	int status2 = 0;
 
 	f = match_fun(arguments[0]);
 	if (f)
@@ -34,17 +33,16 @@ int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 	if (pid == 0)
 	{
 		if (execve(arguments[0], arguments, NULL) == -1)
-		{
-			status1 =  print_error(file, copy, cont);
-			return (status1);
-		}
+			exit(print_error(file, copy, cont));
+		
 	}
 	else
 	{
-		wait(&status2);
+		wait(&status);
+		status = WEXITSTATUS(status);
 		if (is_alias == true)
 			free(string_exe);
 		free(arguments);
 	}
-	return (status1);
+	return (status);
 }

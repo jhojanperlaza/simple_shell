@@ -41,6 +41,6 @@ int main(int ac __attribute__((unused)), char **name_file)
 		free(buffer);
 		buffer = NULL;
 		cont_prom++;
-	} while (!status);
+	} while (TRUE);
 	return (status);
 }
