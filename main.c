@@ -19,7 +19,6 @@ int main(int ac __attribute__((unused)), char **name_file)
 		if (getline(&buffer, &bufsize, stdin) == EOF)
 		{
 			free(buffer);
-			printf("\n");
 			exit(status);
 		}
 		copy = _strdup(buffer);
