@@ -18,6 +18,8 @@ int main(int ac __attribute__((unused)), char **name_file)
 		}
 		if (getline(&buffer, &bufsize, stdin) == EOF)
 		{
+			if (feof(stdin))
+				exit (EXIT_SUCCESS);
 			free(buffer);
 			printf("\n");
 			exit (status);
