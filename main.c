@@ -9,18 +9,18 @@ int main(int ac __attribute__((unused)), char **name_file)
 {
 	char *buffer = NULL, **arg, *copy = NULL, *token;
 	size_t bufsize = 0;
-	int status, cont = 0, cont_prom = 1;
+	int status = 0, cont = 0, cont_prom = 1;
 
 	do	{
 		if (isatty(fileno(stdin)))
 		{
 			printf("simple_shell-> ");
 		}
-		if (getline(&buffer, &bufsize, stdin) == -1)
+		if (getline(&buffer, &bufsize, stdin) == EOF)
 		{
 			free(buffer);
 			printf("\n");
-			return (EXIT_FAILURE);
+			exit (status);
 		}
 		copy = _strdup(buffer);
 		token = strtok(copy, " \t\n");

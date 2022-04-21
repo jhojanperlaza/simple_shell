@@ -7,7 +7,7 @@
 * Return: The variable status or Error.
 */
 
-int fun_exit(char **comand, char *copy, char *buffer)
+int fun_exit(char **comand, char *copy, char *buffer)/*falta status **/
 {
 	free(comand);
 	free(copy);

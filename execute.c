@@ -10,7 +10,7 @@
  */
 int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 {
-	int status, (*f)(char **comand, char *copy, char *buffer);
+	int status = 0, (*f)(char **comand, char *copy, char *buffer);
 	pid_t pid;
 	char *string_exe = NULL;
 	struct stat st;
