@@ -20,9 +20,10 @@ int main(int ac __attribute__((unused)), char **name_file)
 		{
 			if (feof(stdin))
 				exit (EXIT_SUCCESS);
+			else 
 			free(buffer);
 			printf("\n");
-			exit (status);
+			exit (EXIT_FAILURE);
 		}
 		copy = _strdup(buffer);
 		token = strtok(copy, " \t\n");
