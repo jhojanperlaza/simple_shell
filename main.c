@@ -18,12 +18,9 @@ int main(int ac __attribute__((unused)), char **name_file)
 		}
 		if (getline(&buffer, &bufsize, stdin) == EOF)
 		{
-			if (feof(stdin))
-				exit (EXIT_SUCCESS);
-			else 
 			free(buffer);
 			printf("\n");
-			exit (EXIT_FAILURE);
+			exit(status);
 		}
 		copy = _strdup(buffer);
 		token = strtok(copy, " \t\n");
