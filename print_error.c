@@ -10,6 +10,7 @@ int print_error(char **name_file, char *copy, int cont)
 {
 	int status;
 
-	status = fprintf(stderr, "%s: %i: %s: not found\n", name_file[0], cont, copy);	
+	status = fprintf(stderr, "%s: %i: %s: not found\n", name_file[0],
+	cont, copy);
 	return (status);
 }
