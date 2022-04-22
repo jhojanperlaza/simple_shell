@@ -12,5 +12,5 @@ int fun_exit(char **comand, char *copy, char *buffer)/*falta status **/
 	free(comand);
 	free(copy);
 	free(buffer);
-	exit(2);
+	exit(0);
 }
