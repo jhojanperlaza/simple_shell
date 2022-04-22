@@ -33,7 +33,9 @@ simple_shell->
 
 simple_shell-> ls
 
-README.md   execute.c            'get_PATH copy'    get_arguments.c    shell  _strcat.c    generate_authors.sh   get_PATH.c       main.c            shell.h
+README.md   execute.c  'get_PATH copy'    get_arguments.c    
+shell  _strcat.c    generate_authors.sh   get_PATH.c       
+main.c            shell.h
         
 simple_shell-> ls -l
 
