@@ -3,9 +3,7 @@
 .B shell - command interpreter (shell)
 .SH SYNOPSIS
 .B shell
-[get_arguments]
-[get_PATH]
-[execute]
+[get_arguments] [get_PATH] [execute]
 .SH DESCRIPTION
 .B shell
 is a command interpreter which mimics the system .B shell.This is the first version developed by HolbertonSchool first term students. This version has features like interactive mode and non-interactive mode. This manual page is not intended to be a tutorial or a complete selection.
