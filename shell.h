@@ -29,7 +29,7 @@ extern char **environ;
 typedef struct get
 {
 	char *shape;
-	int (*f)(char **comand, char *copy, char *buffer);
+	int (*f)(char **comand, char *copy, char *buffer, int status);
 } get_fun;
 
 char *_strcat(char *dest, char *src);
@@ -40,9 +40,9 @@ char *get_PATH(char *argv);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 char *_strdup(char *str);
-int fun_exit(char **comand, char *copy, char *buffer);
-int (*match_fun(char *comands))(char **comand, char *copy, char *buffer);
-int fun_env(char **arguments, char *copy, char *buffer);
+int fun_exit(char **comand, char *copy, char *buffer, int status);
+int (*match_fun(char *comands))(char **comand, char *copy, char *buffer, int status);
+int fun_env(char **arguments, char *copy, char *buffer, int status);
 int print_error(char **name_file, char *copy, int cont);
 int _strcmp(char *s1, char *s2);
 #endif

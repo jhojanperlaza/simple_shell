@@ -7,7 +7,7 @@
 * buffer: is a string of getline
 * Return: The variable status or Error.
 */
-int (*match_fun(char *comands))(char **comand, char *copy, char *buffer)
+int (*match_fun(char *comands))(char **comand, char *copy, char *buffer, int status)
 {
 	get_fun type[] = {
 		{"exit", fun_exit},

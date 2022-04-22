@@ -10,7 +10,7 @@
  */
 int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 {
-	int status = 0, (*f)(char **comand, char *copy, char *buffer);
+	int status = 0, (*f)(char **comand, char *copy, char *buffer, int status);
 	pid_t pid;
 	char *string_exe = NULL;
 	struct stat st;
@@ -19,9 +19,9 @@ int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 	f = match_fun(arguments[0]);
 	if (f)
 	{
-		status = f(arguments, copy, buffer);
+		f(arguments, copy, buffer, status);
 		free(arguments);
-		return (status);
+		return (0);
 	}
 	if (stat(arguments[0], &st) == -1) /**si argv[0] es un alias **/
 	{

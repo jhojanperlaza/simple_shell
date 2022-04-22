@@ -7,7 +7,7 @@
 * Return: The variable status or Error.
 */
 
-int fun_env(char **arguments, char *copy, char *buffer)
+int fun_env(char **arguments, char *copy, char *buffer, int status)
 {
 	char **env = environ;
 
@@ -19,5 +19,5 @@ int fun_env(char **arguments, char *copy, char *buffer)
 		printf("%s\n", *env);
 		env++;
 	}
-	return (0);
+	return (status);
 }
