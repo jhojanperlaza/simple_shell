@@ -25,8 +25,8 @@ _The  incoming argument can be specified a hyphen "-" and activate the traibuto 
 * exit Exit the program
 * env Prints the current environment
 
-´´´
 ### EXAMPLE
+```
 ~/simple_shell$ gcc -g -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ~/simple_shell$ ./hsh
 simple_shell-> 
@@ -50,7 +50,7 @@ USER=julien  LANGUAGE=en_US  SESSION=ubuntu  COMPIZ_CONFIG_PROFILE=ubuntu   SHLV
 C_IS=Fun_:)             DESKTOP_SESSION=ubuntu            LOGNAME=julien            TERM=xterm-256color
 PATH=/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/lo‐
 cal/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin DISPLAY=:0
-´´´´
+```
 
 ## MAP MIND
 
