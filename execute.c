@@ -19,9 +19,9 @@ int execute(char **arguments, char *copy, char *buffer, char **file, int cont)
 	f = match_fun(arguments[0]);
 	if (f)
 	{
-		f(arguments, copy, buffer);
+		status = f(arguments, copy, buffer);
 		free(arguments);
-		return (0);
+		return (status);
 	}
 	if (stat(arguments[0], &st) == -1) /**si argv[0] es un alias **/
 	{
