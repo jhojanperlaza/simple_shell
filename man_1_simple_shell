@@ -34,13 +34,19 @@ Prints the current environment
 .TP
 .SH EXAMPLE
 .Ip
-~/simple_shell$ ls
+~/simple_shell$ gcc -g -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+~/simple_shell$ ./hsh
+.IP
+simple_shell-> 
+.br
+.Ip
+simple_shell->  ls
 .IP
 README.md   execute.c            'get_PATH copy'   get_arguments.c   shell
 _strcat.c   generate_authors.sh   get_PATH.c       main.c            shell.h
 .br
 .Ip
-~/simple_shell$ ls -l
+simple_shell->  ls -l
 .IP
 -rw-r--r-- 1 AFOP    61 Apr 12 22:02  README.md
 -rw-r--r-- 1 AFOP   733 Apr 15 11:32  _strcat.c
@@ -48,13 +54,13 @@ _strcat.c   generate_authors.sh   get_PATH.c       main.c            shell.h
 -rwxr-xr-x 1 AFOP   407 Apr 13 23:55  generate_authors.sh
 .br
 .Ip
-~/simple_shell$ /bin/ls
+simple_shell->  /bin/ls
 .IP
 README.md   execute.c            'get_PATH copy'   get_arguments.c   shell
  _strcat.c   generate_authors.sh   get_PATH.c       main.c            shell.h
 .br
 .IP
-~/simple_shell$ env
+simple_shell->  env
 .IP
 USER=julien
 LANGUAGE=en_US
