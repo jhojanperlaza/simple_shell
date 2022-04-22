@@ -31,6 +31,7 @@ Prints the current environment
 .br
 .TP
 .SH EXAMPLE
+For the examples the first step that we are going to carry out is the execution of our shell
 .Ip
 ~/simple_shell$ gcc -g -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ~/simple_shell$ ./hsh
