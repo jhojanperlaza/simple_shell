@@ -4,6 +4,7 @@
 * @arguments: string of get arguments
 * @copy: is copy of buffer
 * @buffer: is a string of getline
+* @status: is the number that return
 * Return: The variable status or Error.
 */
 
